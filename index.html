@@ -1,146 +1,584 @@
+<!-- 𝗦𝘂𝗺𝗯𝗲𝗿 𝗖𝗼𝗱𝗲 
+6281376752537 -->
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZAM Keren</title>
-  <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: black;
-      overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
-      height: 100vh;
-      position: relative;
-      color: white;
-    }
-
-    /* Animasi Jedag Jedug */
-    .title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 4rem;
-      font-weight: bold;
-      animation: beat 0.5s infinite alternate;
-      z-index: 10;
-      text-shadow: 0 0 10px #fff;
-    }
-
-    @keyframes beat {
-      from {
-        transform: translate(-50%, -50%) scale(1);
-      }
-      to {
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-    }
-
-    /* Lingkaran Game */
-    .circle {
-      position: absolute;
-      top: 70%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      background: #ffffff22;
-      border: 2px solid white;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .circle.exploded {
-      animation: explode 0.8s forwards;
-    }
-
-    @keyframes explode {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(5);
-        opacity: 0;
-      }
-    }
-
-    /* Bintang Jatuh */
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 80px;
-      background: white;
-      opacity: 0.5;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        top: -100px;
-        opacity: 1;
-      }
-      100% {
-        top: 100vh;
-        opacity: 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMZYY BOTZ AI 🔥</title>
+    <style>
+        :root {
+            --primary: #6200ee;
+            --primary-dark: #3700b3;
+            --secondary: #03dac6;
+            --error: #b00020;
+            --success: #00c853;
+            --warning: #ffab00;
+            --background: #121212;
+            --surface: #1e1e1e;
+            --text: #e1e1e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(98, 0, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(3, 218, 198, 0.1) 0%, transparent 50%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+        
+        /* Login Page */
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 2rem;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+        
+        .login-box {
+            background-color: var(--surface);
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .login-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            background-color: #2a2a2a;
+            color: var(--text);
+            font-size: 1rem;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(98, 0, 238, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(98, 0, 238, 0.3);
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #009944;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 200, 83, 0.3);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning);
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background-color: #e65100;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 171, 0, 0.3);
+        }
+        
+        /* Dashboard */
+        .dashboard {
+            display: none;
+            padding: 2rem;
+            width: 100%;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #333;
+        }
+        
+        .welcome-message {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--surface);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid #333;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .feature-desc {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-feature {
+            background-color: rgba(98, 0, 238, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            width: auto;
+        }
+        
+        .btn-feature:hover {
+            background-color: rgba(98, 0, 238, 0.2);
+        }
+        
+        .new-badge {
+            background-color: var(--success);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* Transition Pages */
+        .transition-page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .transition-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .funny-message {
+            font-size: 1rem;
+            color: #aaa;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: var(--surface);
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #333;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: #aaa;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-container {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #2a2a2a;
+            border-radius: 0.5rem;
+            display: none;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            background-color: #333;
+            border-radius: 2.5px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        .sticker-preview {
+            width: 200px;
+            height: 200px;
+            background-color: #2a2a2a;
+            border-radius: 1rem;
+            margin: 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .sticker-preview img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .script-code {
+            background-color: #2a2a2a;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            max-height: 300px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="title">Click Me!</div>
-  <div class="circle" id="circle"></div>
-
-  <script>
-    // Star background
-    const createStar = () => {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.left = Math.random() * window.innerWidth + 'px';
-      star.style.animationDuration = (1 + Math.random() * 2) + 's';
-      star.style.opacity = Math.random();
-      document.body.appendChild(star);
-
-      setTimeout(() => {
-        star.remove();
-      }, 3000);
-    };
-
-    setInterval(createStar, 100);
-
-    // Circle game logic
-    const circle = document.getElementById('circle');
-    let clickCount = 0;
-
-    circle.addEventListener('click', () => {
-      clickCount++;
-
-      if (clickCount % 3 === 0 && clickCount < 100) {
-        const newSize = 100 + (clickCount * 2);
-        circle.style.width = newSize + 'px';
-        circle.style.height = newSize + 'px';
-      }
-
-      if (clickCount === 10) {
-        circle.style.background = '#FFD700'; // gold
-        circle.style.borderColor = '#FFD700';
-      }
-
-      if (clickCount === 100) {
-        circle.classList.add('exploded');
-        setTimeout(() => {
-          circle.remove();
-        }, 800);
-      }
-    });
-  </script>
-</body>
-</html>
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="logo">IMZYY BOTZ AI</div>
+        <div class="login-box">
+            <h2 class="login-title">Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- First Transition Page -->
+    <div class="transition-page" id="transitionPage1">
+        <div class="logo">IMZYY BOTZ AI</div>
+        <div class="transition-message">
+            MAU NGAPAIN LU BANGSAT DI SINI AJA GAADA APA APA
+        </div>
+        <div class="funny-message">Tapi serius, ini cuma bercanda ya ganteng 😘</div>
+        <button class="btn btn-primary" id="nextButton1">KLIK BERIKUTNYA</button>
+    </div>
+    
+    <!-- Second Transition Page -->
+    <div class="transition-page" id="transitionPage2">
+        <div class="logo">IMZYY BOTZ AI</div>
+        <div class="transition-message">
+            OHH MASI DI SINI GANTENG BENTAR YAHH 😘
+        </div>
+        <div class="funny-message">Sabar ya, fitur kerennya sebentar lagi...</div>
+        <button class="btn btn-primary" id="nextButton2">MASUK KE FITUR BOT</button>
+    </div>
+    
+    <!-- Dashboard -->
+    <div class="dashboard container" id="dashboard">
+        <div class="header">
+            <h1 class="logo">IMZYY BOTZ AI 🔥</h1>
+            <button class="btn btn-feature" id="logoutBtn">Logout</button>
+        </div>
+        
+        <h2 class="welcome-message">Selamat datang di IMZYY BOTZ AI!</h2>
+        <p>Pilih fitur yang ingin Anda gunakan:</p>
+        
+        <div class="features-grid">
+            <!-- Blank Chat WhatsApp -->
+            <div class="feature-card" data-feature="blank-chat">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">BLANK CHAT WHATSAPP</h3>
+                <p class="feature-desc">Membuka chat WhatsApp tanpa menyimpan nomor</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- Nomor Kosong WhatsApp -->
+            <div class="feature-card" data-feature="empty-number">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">BUAT NOMOR KOSONG WHATSAPP <span class="new-badge">UPDATED</span></h3>
+                <p class="feature-desc">Generate nomor WhatsApp dengan OTP resmi 6 digit</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- Create Group WhatsApp -->
+            <div class="feature-card" data-feature="create-group">
+                <div class="feature-icon">👥</div>
+                <h3 class="feature-title">CREATE GROUP WHATSAPP <span class="new-badge">NEW!</span></h3>
+                <p class="feature-desc">Buat grup WhatsApp dengan nama dan info yang Anda tentukan</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- TikTok Downloader -->
+            <div class="feature-card" data-feature="tiktok-downloader">
+                <div class="feature-icon">🎵</div>
+                <h3 class="feature-title">TIKTOK DOWNLOADER</h3>
+                <p class="feature-desc">Download video TikTok tanpa watermark</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- Spotify Premium -->
+            <div class="feature-card" data-feature="spotify-premium">
+                <div class="feature-icon">🎧</div>
+                <h3 class="feature-title">SPOTIFY PREMIUM</h3>
+                <p class="feature-desc">Spotify tanpa iklan & langsung paketan</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- BRAT Generator -->
+            <div class="feature-card" data-feature="brat-generator">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title">BRAT GENERATOR</h3>
+                <p class="feature-desc">Membuat sticker otomatis dengan AI canggih kami</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- SSWeb -->
+            <div class="feature-card" data-feature="ssweb">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title">SSWEB</h3>
+                <p class="feature-desc">Mengambil screenshot dari URL website yang Anda berikan</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- Create Script -->
+            <div class="feature-card" data-feature="create-script">
+                <div class="feature-icon">📜</div>
+                <h3 class="feature-title">CREATESCRIPT</h3>
+                <p class="feature-desc">Membuat script bot WhatsApp/Telegram dengan mudah</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+            
+            <!-- Create Website -->
+            <div class="feature-card" data-feature="create-website">
+                <div class="feature-icon">💻</div>
+                <h3 class="feature-title">CREATEWEBSITE</h3>
+                <p class="feature-desc">Membuat website dengan command sederhana</p>
+                <button class="btn btn-feature">Buka Fitur</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========= MODAL FITUR ========= -->
+    
+    <!-- Blank Chat WhatsApp -->
+    <div class="modal" id="blank-chat-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">BLANK CHAT WHATSAPP</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Masukkan nomor WhatsApp yang ingin dibuka chat-nya:</p>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label for="whatsappNumber">Nomor WhatsApp (contoh: 6281234567890):</label>
+                    <input type="tel" id="whatsappNumber" class="form-control" placeholder="6281234567890" pattern="[0-9]{10,15}">
+                </div>
+                <button class="btn btn-primary" id="openWhatsAppBtn">Buka Chat WhatsApp</button>
+                <div class="progress-bar" style="display: none;" id="waProgress">
+                    <div class="progress"></div>
+                </div>
+                <div class="result-container" id="waResult">
+                    <p>Chat WhatsApp siap dibuka! Klik tombol di bawah:</p>
+                    <a href="#" target="_blank" class="btn btn-success" id="waChatLink">Buka Chat WhatsApp</a>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: #aaa;">* Fitur ini membuka chat WhatsApp tanpa menyimpan nomor di kontak</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Nomor Kosong WhatsApp -->
+    <div class="modal" id="empty-number-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">BUAT NOMOR KOSONG WHATSAPP</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Generate nomor WhatsApp virtual dengan OTP resmi 6 digit:</p>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label for="countryCode">Kode Negara:</label>
+                    <select id="countryCode" class="form-control">
+                        <option value="62">Indonesia (+62)</option>
+                        <option value="1">USA (+1)</option>
+                        <option value="44">UK (+44)</option>
+                        <option value="91">India (+91)</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="generateNumberBtn">Generate Nomor</button>
+                <div class="progress-bar" style="display: none;" id="numberProgress">
+                    <div class="progress"></div>
+                </div>
+                <div class="result-container" id="numberResult">
+                    <p><strong>Nomor WhatsApp:</strong> <span id="generatedNumber"></span></p>
+                    <p><strong>OTP Code (6 digit):</strong> <span id="otpCode" style="font-weight: bold; color: var(--success);"></span></p>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: #aaa;">* Nomor ini valid untuk 24 jam</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Create Group WhatsApp -->
+    <div class="modal" id="create-group-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">CREATE GROUP WHATSAPP</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Buat grup WhatsApp dengan nama dan info yang tepat:</p>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label for
