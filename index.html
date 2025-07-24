@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAM Keren</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      position: relative;
+      color: white;
+    }
+
+    /* Animasi Jedag Jedug */
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      font-weight: bold;
+      animation: beat 0.5s infinite alternate;
+      z-index: 10;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    @keyframes beat {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    /* Lingkaran Game */
+    .circle {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: #ffffff22;
+      border: 2px solid white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .circle.exploded {
+      animation: explode 0.8s forwards;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0;
+      }
+    }
+
+    /* Bintang Jatuh */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 80px;
+      background: white;
+      opacity: 0.5;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -100px;
+        opacity: 1;
+      }
+      100% {
+        top: 100vh;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="title">ZAM Keren</div>
+  <div class="circle" id="circle"></div>
+
+  <script>
+    // Star background
+    const createStar = () => {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * window.innerWidth + 'px';
+      star.style.animationDuration = (1 + Math.random() * 2) + 's';
+      star.style.opacity = Math.random();
+      document.body.appendChild(star);
+
+      setTimeout(() => {
+        star.remove();
+      }, 3000);
+    };
+
+    setInterval(createStar, 100);
+
+    // Circle game logic
+    const circle = document.getElementById('circle');
+    let clickCount = 0;
+
+    circle.addEventListener('click', () => {
+      clickCount++;
+
+      if (clickCount % 3 === 0 && clickCount < 100) {
+        const newSize = 100 + (clickCount * 2);
+        circle.style.width = newSize + 'px';
+        circle.style.height = newSize + 'px';
+      }
+
+      if (clickCount === 10) {
+        circle.style.background = '#FFD700'; // gold
+        circle.style.borderColor = '#FFD700';
+      }
+
+      if (clickCount === 100) {
+        circle.classList.add('exploded');
+        setTimeout(() => {
+          circle.remove();
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>
